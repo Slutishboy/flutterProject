@@ -1,5 +1,16 @@
+class CatelogModal{
+  static final items = [
+  Item(
+      id: 1,
+      name: "iphone 12 pro",
+      desc: "Apple iphone 12 generation",
+      price: 999,
+      color: "#33505a",
+      image: "https://m.media-amazon.com/images/I/61SExK8C6AL._AC_SY550_.jpg")
+];
+}
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -14,6 +25,4 @@ class Item {
       required this.image});
 }
 
-final products = [
-  Item(id: "bkhskr", name: name, desc: desc, price: price, color: color, image: image)
-];
+
