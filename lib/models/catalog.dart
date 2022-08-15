@@ -1,14 +1,10 @@
-class CatelogModal{
-  static final items = [
-  Item(
-      id: 1,
-      name: "iphone 12 pro",
-      desc: "Apple iphone 12 generation",
-      price: 999,
-      color: "#33505a",
-      image: "https://m.media-amazon.com/images/I/61SExK8C6AL._AC_SY550_.jpg")
-];
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
+class CatelogModal {
+  static List<Item> items=[];
 }
+
 class Item {
   final int id;
   final String name;
@@ -16,13 +12,34 @@ class Item {
   final num price;
   final String color;
   final String image;
-  Item(
-      {required this.id,
-      required this.name,
-      required this.desc,
-      required this.price,
-      required this.color,
-      required this.image});
-}
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image
+  });
+factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map["id"],
+        name: map["name"],
+        desc: map["desc"],
+        price: map["price"],
+        color: map["color"],
+        image: map["image"]);
+  }
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image
+      };
+  
+}     
 
+
+  
 
