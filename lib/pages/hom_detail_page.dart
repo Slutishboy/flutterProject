@@ -14,7 +14,8 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyTheme.creamColor,
+        // backgroundColor: MyTheme.creamColor,
+        backgroundColor: Colors.transparent,
       ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
@@ -56,7 +57,8 @@ class HomeDetailPage extends StatelessWidget {
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
-                    10.heightBox
+                    10.heightBox,
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesettingLorem Ipsum is simply dummy text of the printing and typesettingLorem Ipsum is simply dummy text of the printing and typesetting".text.textStyle(context.captionStyle).make().p16()
                   ],
                 ).py64(),
               ),
