@@ -2,7 +2,13 @@
 import 'dart:convert';
 
 class CatelogModal {
-  static List<Item> items=[];
+  static List<Item> items = [];
+  // Get item by id
+  static Item getById(int id) =>
+      items.firstWhere((element) => (element.id == id), orElse: null);
+
+  // Get item by position
+  static Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
@@ -12,14 +18,13 @@ class Item {
   final num price;
   final String color;
   final String image;
-  Item({
-    required this.id,
-    required this.name,
-    required this.desc,
-    required this.price,
-    required this.color,
-    required this.image
-  });
+  Item(
+      {required this.id,
+      required this.name,
+      required this.desc,
+      required this.price,
+      required this.color,
+      required this.image});
 // factory Item.fromMap(Map<String, dynamic> map) {
 //     return Item(
 //         id: map["id"],
@@ -37,7 +42,6 @@ class Item {
 //         "color": color,
 //         "image": image
 //       };
-  
 
   Item copyWith({
     int? id,
@@ -81,7 +85,8 @@ class Item {
 
   String toJson() => json.encode(toMap());
 
-  factory Item.fromJson(String source) => Item.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Item.fromJson(String source) =>
+      Item.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -91,27 +96,22 @@ class Item {
   @override
   bool operator ==(covariant Item other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.id == id &&
-      other.name == name &&
-      other.desc == desc &&
-      other.price == price &&
-      other.color == color &&
-      other.image == image;
+
+    return other.id == id &&
+        other.name == name &&
+        other.desc == desc &&
+        other.price == price &&
+        other.color == color &&
+        other.image == image;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      name.hashCode ^
-      desc.hashCode ^
-      price.hashCode ^
-      color.hashCode ^
-      image.hashCode;
+        name.hashCode ^
+        desc.hashCode ^
+        price.hashCode ^
+        color.hashCode ^
+        image.hashCode;
   }
-}     
-
-
-  
-
+}

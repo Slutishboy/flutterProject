@@ -35,11 +35,13 @@ class MyTheme {
       ),
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       appBarTheme: AppBarTheme(
+        
         color: Colors.black,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.white),
         // textTheme: Theme.of(context).textTheme,
-        titleTextStyle: Theme.of(context).textTheme.headline6,
+        textTheme: Theme.of(context).textTheme.copyWith(headline6: context.textTheme.headline6!.copyWith(color: Colors.white)),
+        // titleTextStyle: Theme.of(context).textTheme.headline6,
         toolbarTextStyle: Theme.of(context).textTheme.headline4,
         toolbarHeight: 70,
       ));
