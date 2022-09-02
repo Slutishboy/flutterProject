@@ -1,7 +1,10 @@
 import 'package:fapp/models/catalog.dart';
 
 class CartModal {
-  late CatelogModal _catelog;
+  static final cartModal = CartModal._internal();
+  CartModal._internal();
+  factory CartModal() => cartModal;
+ late CatelogModal _catelog;
   // store Ids of each item
   final List<int> _itemIds = [];
   CatelogModal get catalog => _catelog;
@@ -21,6 +24,7 @@ class CartModal {
   void add(Item item) {
     _itemIds.add(item.id);
   }
+
   //remove item
   void remove(Item item) {
     _itemIds.remove(item.id);

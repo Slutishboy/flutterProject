@@ -2,6 +2,9 @@
 import 'dart:convert';
 
 class CatelogModal {
+  static final catModal = CatelogModal._internal();
+  CatelogModal._internal();
+  factory CatelogModal() => catModal;
   static List<Item> items = [];
   // Get item by id
    Item getById(int id) =>
