@@ -1,9 +1,9 @@
 import 'package:fapp/models/catalog.dart';
 
 class CartModal {
-  static final cartModal = CartModal._internal();
-  CartModal._internal();
-  factory CartModal() => cartModal;
+  // static final cartModal = CartModal._internal();
+  // CartModal._internal();
+  // factory CartModal() => cartModal;
  late CatelogModal _catelog;
   // store Ids of each item
   final List<int> _itemIds = [];
