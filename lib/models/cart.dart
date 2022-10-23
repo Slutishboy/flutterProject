@@ -1,10 +1,12 @@
+import 'package:fapp/core/store.dart';
 import 'package:fapp/models/catalog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModal {
   // static final cartModal = CartModal._internal();
   // CartModal._internal();
   // factory CartModal() => cartModal;
- late CatelogModal _catelog;
+  late CatelogModal _catelog;
   // store Ids of each item
   final List<int> _itemIds = [];
   CatelogModal get catalog => _catelog;
@@ -28,5 +30,14 @@ class CartModal {
   //remove item
   void remove(Item item) {
     _itemIds.remove(item.id);
+  }
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+  AddMutation(this.item);
+  @override
+  perform() {
+    store.cart._itemIds.add(item.id);
   }
 }
